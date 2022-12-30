@@ -10,10 +10,12 @@ UCLASS()
 class TPSHOOTER_API AGun : public AActor
 {
 	GENERATED_BODY()
-	
+
 public:	
 	// Sets default values for this actor's properties
 	AGun();
+
+	void PullTrigger();
 
 protected:
 	// Called when the game starts or when spawned
@@ -22,5 +24,19 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
+private:
+	// UPROPERTY(EditAnywhere)
+	// float test = 10;
+	UPROPERTY(VisibleAnywhere)
+	USceneComponent* Root;
+	UPROPERTY(VisibleAnywhere)
+	USkeletalMeshComponent* Mesh;
+	UPROPERTY(EditAnywhere)
+	UParticleSystem* MuzzleFlash;
+	UPROPERTY(EditAnywhere)
+	UParticleSystem* HitFlash;
+	UPROPERTY(EditAnywhere)
+	float MaxRangeOfBullet = 10000;
+	UPROPERTY(EditAnywhere)
+	float DamageAmount = 10;
 };

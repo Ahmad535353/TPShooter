@@ -6,6 +6,8 @@
 #include "GameFramework/Character.h"
 #include "ShooterCharacter.generated.h"
 
+class AGun;
+
 UCLASS()
 class TPSHOOTER_API AShooterCharacter : public ACharacter
 {
@@ -25,6 +27,7 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser) override;
 
 
 	void MoveForward(float AxisValue);
@@ -36,7 +39,19 @@ public:
 	void LookRightRate(float AxisValue);
 	
 	void Jump();
+	void Shoot();
 
 	UPROPERTY(EditAnywhere)
 	float RotationRate = 50;
+
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<AGun> GunClass;
+	AGun* Gun;
+
+	UPROPERTY(EditAnywhere)
+	float MaxHealth = 100;
+	UPROPERTY(EditAnywhere)
+	float Health = 0;
+	UFUNCTION(BlueprintPure)
+	bool isDead() const;
 };
