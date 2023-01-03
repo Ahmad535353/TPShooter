@@ -13,5 +13,8 @@ UCLASS()
 class TPSHOOTER_API ATPShooterGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
+
+public:
+	virtual void PawnKilled(APawn* PawnKilled);
 	
 };

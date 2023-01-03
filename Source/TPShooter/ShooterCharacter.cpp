@@ -3,6 +3,8 @@
 
 #include "ShooterCharacter.h"
 #include "Gun.h"
+#include "Components/CapsuleComponent.h"
+#include "TPShooterGameModeBase.h"
 
 // Sets default values
 AShooterCharacter::AShooterCharacter()
@@ -53,11 +55,18 @@ void AShooterCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
 float AShooterCharacter::TakeDamage(float DamageAmount, FDamageEvent const &DamageEvent, AController *EventInstigator, AActor *DamageCauser)
 {
     float DamageApplied = Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator,DamageCauser);
-	Health -= DamageApplied;
-	if (Health < 0)
+	Health -= FMath::Min(Health, DamageApplied);
+	if (isDead())
 	{
-		Health = 0;
+		ATPShooterGameModeBase* GameMode = GetWorld()->GetAuthGameMode<ATPShooterGameModeBase>();
+		if (GameMode)
+		{
+			GameMode->PawnKilled(this);
+		}
+		DetachFromControllerPendingDestroy();
+		GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 	}
+
 	UE_LOG(LogTemp, Warning, TEXT("Damage Taken. New health is %f"), Health);
 	return DamageApplied;
 }

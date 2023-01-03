@@ -3,3 +3,6 @@
 
 #include "TPShooterGameModeBase.h"
 
+void ATPShooterGameModeBase::PawnKilled(APawn *PawnKilled)
+{
+}
