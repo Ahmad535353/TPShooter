@@ -33,7 +33,7 @@ void AGun::PullTrigger()
 	{
 		// UE_LOG(LogTemp, Warning, TEXT("%d"), Hit); 
 		// DrawDebugCamera(GetWorld(), PlayerViewPointLocation, PlayerViewPointRotation, 90, 2, FColor::Red, true);
-		DrawDebugPoint(GetWorld(), BulletHitResult.Location, 10, FColor::Red, true);
+		// DrawDebugPoint(GetWorld(), BulletHitResult.Location, 10, FColor::Red, true);
 		
 		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), HitFlash ,BulletHitResult.Location, ShotDirection.Rotation());
 		UGameplayStatics::SpawnSoundAtLocation(GetWorld(), HitSound ,BulletHitResult.Location, ShotDirection.Rotation());
