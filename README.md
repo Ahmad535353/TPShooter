@@ -58,7 +58,8 @@ This README sheds light on the technical prowess, the tools used from Unreal Eng
 
 3. **Open the Project**: Navigate to the project directory and double-click the .uproject file to launch the game in UE5.
 
-Acknowledgments
+### **Acknowledgments**:
+
 Special thanks to Unreal Engine's vast community, documentation, and tutorials which have been invaluable throughout this project's development.
 Also the [Unreal Engine 5 C++ Developer: Learn C++ & Make Video Games](https://www.udemy.com/course/unrealcourse/) which was my starting point and I learned a lot from it.
 
