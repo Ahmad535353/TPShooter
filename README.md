@@ -1,7 +1,8 @@
 # **TPShooter**: An FPS Game Built with Unreal Engine 5
 
-![TPShooter - Unreal Editor 1](https://github.com/Ahmad535353/TPShooter/assets/24531416/dcacda62-c8f8-495b-b7b2-0f9677f994e8)
-![TPShooter - Unreal Editor 2](https://github.com/Ahmad535353/TPShooter/assets/24531416/a0896bf6-1e7c-4a55-ae76-8e45c98d82f8)
+![TPShooter - Unreal Editor 2023-09-17 4_29_54 AM](https://github.com/Ahmad535353/TPShooter/assets/24531416/90062f29-5249-42e5-a9f2-1f237a0deaf1)
+![Screenshot 2023-09-19 170625](https://github.com/Ahmad535353/TPShooter/assets/24531416/59b585df-467f-433d-9954-9c164e925b55)
+
 
 ## **Introduction**
 Welcome to **TPShooter**, a first-person shooter developed from the ground up with Unreal Engine 5. Delving deep into the realm of C++ programming, blueprints have been utilized only where essential, striking a balance between efficiency and flexibility.
